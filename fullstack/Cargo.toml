@@ -1,0 +1,18 @@
+[package]
+name = "fullstack"
+version = "0.1.0"
+edition = "2024"
+
+
+[dependencies]
+dioxus = { workspace = true, features = ["fullstack", "router"] }
+axum = { workspace = true, optional = true }
+tokio = { workspace = true, features = ["full"], optional = true }
+serde = { workspace = true, features = ["derive"] }
+anyhow = { version = "*" }
+reqwest = { version = "*" }
+
+[features]
+default = []
+server = ["axum", "dioxus/server"]
+web = ["dioxus/web"]
